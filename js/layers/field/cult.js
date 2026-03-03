@@ -122,6 +122,7 @@ addLayer('hop', {
         if(hasMilestone('hop', 7)) { gain = gain.mul(tmp.hop.milestones[7].effect); }
         if(hasMilestone('leag', 0)) { gain = gain.mul(tmp.leag.milestones[0].effect); }
         gain = gain.mul(tmp.forest.buyables[15].effect);
+        gain = gain.mul(tmp.evo.effect);
         return gain.max(5).floor();
     },
     baseResource: 'Levels',
@@ -666,7 +667,8 @@ addLayer('hop', {
         dmg = dmg.mul(player.forest.wea.pow_base(2));
         dmg = dmg.mul(tmp.evo.buyables[11].effect);
         if(getBuyableAmount('evo', 211).gte(1)) { dmg = dmg.mul(tmp.evo.buyables[211].effect) }
-        dmg = dmg.mul(tmp.crys.flowersEffect)
+        dmg = dmg.mul(tmp.crys.flowersEffect);
+        dmg = dmg.mul(tmp.evo.effect);
         return dmg.floor();
     },
     arm() {
@@ -679,6 +681,7 @@ addLayer('hop', {
         dmg = dmg.mul(player.forest.arm.pow_base(2))
         if(hasFlauto('72')) { dmg = dmg.mul(10); }
         dmg = dmg.mul(tmp.evo.buyables[21].effect);
+        dmg = dmg.mul(tmp.evo.effect);
         return dmg.sub(1);
     },
     startStage() {

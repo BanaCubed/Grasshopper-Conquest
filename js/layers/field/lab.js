@@ -17,6 +17,9 @@ addLayer('evo', {
         'background-color': 'hsl(0, 0%, 27.5%)',
         'border-color': 'var(--ghop)',
     },
+    effect() {
+        return player.evo.points.max(1).log(4).pow(1.5);
+    },
     type: 'normal',
     resource: 'Grasshoppers',
     gainMult() {
@@ -38,7 +41,7 @@ addLayer('evo', {
     tabFormat: {
         'Evolution': {
             content: [
-                ['raw-html', function(){return `You have <h2  class="overlayThing" id="points" style="color: var(--evo); text-shadow: var(--evo) 0px 0px 10px;">${formatWhole(player.evo.points.max(0))}</h2> Grassmasters`}],
+                ['raw-html', function(){return `You have <h2  class="overlayThing" id="points" style="color: var(--evo); text-shadow: var(--evo) 0px 0px 10px;">${formatWhole(player.evo.points.max(0))}</h2> Grassmasters, multiplying grasshoppers gain, damage, and armour by ${format(tmp.evo.effect)}`}],
                 'blank',
                 'prestige-button',
                 'blank',
