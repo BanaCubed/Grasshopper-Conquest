@@ -121,26 +121,20 @@ addLayer('forest', {
                     [new Decimal(1e11)],
                     [new Decimal(1e18)],
                     [new Decimal(1e27)],
+                    [new Decimal(1e36)],
+                    [new Decimal(1e45)],
                     [Decimal.dInf],
                 ]
                 return costs[player.forest.arm.floor().toNumber()]
             },
             stage(){return player.forest.arm},
             formatCost() {
-                if(player.forest.arm.lt(0.5)) { return formatWhole(1e7) + ' Wood' }
-                if(player.forest.arm.lt(1.5)) { return formatWhole('1e11') + ' Wood' }
-                if(player.forest.arm.lt(2.5)) { return formatWhole('1e18') + ' Wood' }
-                if(player.forest.arm.lt(3.5)) { return formatWhole('1e27') + ' Wood' }
-                if(player.forest.arm.lt(4.5)) { return formatWhole('1eeeeeee9') + ' Wood' }
+                return formatWhole(tmp.forest.clickables[12].cost) + ' Wood'
             },
             progress() {
-                if(player.forest.arm.lt(0.5)) { return player.forest.points.div(1e5).min(100).max(0) }
-                if(player.forest.arm.lt(1.5)) { return player.forest.points.div(1e9).min(100).max(0) }
-                if(player.forest.arm.lt(2.5)) { return player.forest.points.div(1e16).min(100).max(0) }
-                if(player.forest.arm.lt(3.5)) { return player.forest.points.div(1e16).min(100).max(0) }
-                if(player.forest.arm.lt(4.5)) { return new Decimal(0) }
+                return player.forest.points.div(tmp.forest.clickables[12].cost).mul(100).min(100).max(0)
             },
-            names: ['N/A', 'Stool', 'Plank', 'Wooden Decoy', 'Hay Decoy', 'placeholder'],
+            names: ['N/A', 'Stool', 'Plank', 'Wooden Decoy', 'Hay Decoy', 'Sand Exoskeleton', 'Grass Shield', 'placeholder'],
             bgCol: "var(--ghop)",
         },
         13: {
@@ -166,26 +160,20 @@ addLayer('forest', {
                     [new Decimal(1e12)],
                     [new Decimal(1e19)],
                     [new Decimal(1e27)],
+                    [new Decimal(1e36)],
+                    [new Decimal(1e45)],
                     [Decimal.dInf],
                 ]
                 return costs[player.forest.wea.floor().toNumber()]
             },
             stage(){return player.forest.wea},
             formatCost() {
-                if(player.forest.wea.lt(0.5)) { return formatWhole(1e8) + ' Wood' }
-                if(player.forest.wea.lt(1.5)) { return formatWhole('1e12') + ' Wood' }
-                if(player.forest.wea.lt(2.5)) { return formatWhole('1e19') + ' Wood' }
-                if(player.forest.wea.lt(3.5)) { return formatWhole('1e27') + ' Wood' }
-                if(player.forest.wea.lt(4.5)) { return formatWhole('1eeeeeee9') + ' Wood' }
+                return formatWhole(tmp.forest.clickables[13].cost) + ' Wood'
             },
             progress() {
-                if(player.forest.wea.lt(0.5)) { return player.forest.points.div(1e6).min(100).max(0) }
-                if(player.forest.wea.lt(1.5)) { return player.forest.points.div(1e10).min(100).max(0) }
-                if(player.forest.wea.lt(2.5)) { return player.forest.points.div(1e17).min(100).max(0) }
-                if(player.forest.wea.lt(3.5)) { return player.forest.points.div(1e27).min(100).max(0) }
-                if(player.forest.wea.lt(4.5)) { return new Decimal(0) }
+                return player.forest.points.div(tmp.forest.clickables[13].cost).mul(100).min(100).max(0)
             },
-            names: ['N/A', 'Pointy Stick', 'Wooden Mallet', 'Wooden Sword', 'Calcite Sword', 'placeholder'],
+            names: ['N/A', 'Pointy Stick', 'Wooden Mallet', 'Wooden Sword', 'Calcite Sword', 'Flint Spear', 'Hunting Bow', 'placeholder'],
             bgCol: "var(--ghop)",
         },
     },
