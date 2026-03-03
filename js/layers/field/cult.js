@@ -588,9 +588,9 @@ addLayer('hop', {
             hidden() { return false; },
         },
         16: {
-            requirementDescription: 'Stage 1000',
+            requirementDescription: 'Stage 600',
             effectDescription() { return `Hide the opponent DMG and Grasshopper HP due to lack of purpose` },
-            done() { return player.hop.coloTier.gte(999) },
+            done() { return player.hop.coloTier.gte(599) },
             unlocked() { return hasMilestone(this.layer, this.id-2) },
             style: { 'width': '500px', 'border-width': '0', 'box-shadow': 'inset 0 0 0 4px rgba(0,0,0,0.125)' },
             hidden() { return false; },
@@ -794,7 +794,7 @@ addLayer('leag', {
             bgCol: 'var(--rank)'
         },
     },
-    leagues: ['Dirt', 'Grass', 'Wooden', 'Stone', 'Coal', 'Tin', 'Copper', 'Iron', 'Titanium', 'Bronze', 'Silver', 'Gold', 'Platinum', 'Topaz', 'Amethyst', 'Emerald', 'Sapphire', 'Amber', 'Ruby', 'Diamond', 'Alpha', 'Beta', "Gamma", 'Omega', 'Gods', 'Final'],
+    leagues: ['Dirt', 'Grass', 'Wooden', 'Stone', 'Coal', 'Tin', 'Copper', 'Iron', 'Titanium', 'Bronze', 'Silver', 'Gold', 'Platinum', 'Topaz', 'Amethyst', 'Emerald', 'Sapphire', 'Amber', 'Ruby', 'Diamond', 'Alpha', 'Beta', "Gamma", 'Delta', 'Epsilon', 'Omega', 'Gods', 'Final'],
     leagueName() {
         return this.leagues[player.hop.leg.floor().min(this.leagues.length).toNumber()]
     },
